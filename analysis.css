@@ -1,0 +1,12 @@
+th{
+    padding: 40px;
+    border-collapse: collapse;
+    background-color: rgb(66, 127, 239);
+    color: white;
+}
+td{
+    padding: 30px;
+}
+tr:nth-child(even){
+    background-color: rgb(196, 220, 243);
+}
