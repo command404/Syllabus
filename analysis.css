@@ -1,12 +1,125 @@
-th{
-    padding: 40px;
-    border-collapse: collapse;
-    background-color: rgb(66, 127, 239);
-    color: white;
+/* Typography and Layout */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
 }
-td{
+
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.table-container {
+    background-color: #ffffff;
+    border-radius: 12px;
     padding: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
-tr:nth-child(even){
-    background-color: rgb(196, 220, 243);
+
+.table-title {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.table-subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #555;
+}
+
+/* Table Base Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    font-size: 16px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    padding: 16px;
+    background-color: #3a7bd5; /* Rich blue */
+    color: white;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 16px;
+    text-align: left;
+}
+
+/* Zebra stripes */
+tr:nth-child(even) {
+    background-color: #f0faff; /* soft blue */
+}
+tr:nth-child(odd) {
+    background-color: #e9f7ef; /* soft green */
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: rgba(58, 123, 213, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Emoji check/cross styling via Unicode */
+td:contains("✔") {
+    color: #2e7d32; /* green */
+    font-weight: bold;
+}
+
+td:contains("✖") {
+    color: #c62828; /* red */
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    td::before {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #444;
+    }
+
+    td:nth-of-type(1)::before { content: "Subject"; }
+    td:nth-of-type(2)::before { content: "CSE"; }
+    td:nth-of-type(3)::before { content: "AIDS"; }
+    td:nth-of-type(4)::before { content: "AIML"; }
 }
